@@ -17,7 +17,7 @@ services:
       JAVA_OPTS_APPEND: "-javaagent:/tmp/opentelemetry-javaagent-all.jar"
       OTEL_SERVICE_NAME: keycloak
       OTEL_TRACES_EXPORTER: jaeger
-      OTEL_METRICS_EXPORTER: prometheus
+      xOTEL_METRICS_EXPORTER: prometheus
       OTEL_EXPORTER_JAEGER_ENDPOINT: http://jaeger:14250
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
