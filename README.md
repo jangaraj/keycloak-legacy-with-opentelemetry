@@ -121,6 +121,27 @@ CONTAINER ID   NAME                  CPU %     MEM USAGE / LIMIT     MEM %     N
 6a14f007517a   keycloak_keycloak_1   348.61%   1.147GiB / 7.775GiB   14.76%    369MB / 4.5GB   154MB / 1.73MB   187
 ```
 
-### Performance conclussion
+Reference app (Caddy 2 with static response):
+```
+     checks.........................: 100.00% ? 276108      ? 0
+     data_received..................: 28 MB   464 kB/s
+     data_sent......................: 12 MB   191 kB/s
+     http_req_blocked...............: avg=22.61ms  min=230ns   med=550ns    max=3.83s p(90)=690ns    p(95)=800ns
+     http_req_connecting............: avg=8.33ms   min=0s      med=0s       max=2.5s  p(90)=0s       p(95)=0s
+     http_req_duration..............: avg=623.88ms min=33.89ms med=529.02ms max=2.5s  p(90)=1.02s    p(95)=1.27s
+       { expected_response:true }...: avg=623.88ms min=33.89ms med=529.02ms max=2.5s  p(90)=1.02s    p(95)=1.27s
+     http_req_failed................: 0.00%   ? 0           ? 276108
+     http_req_receiving.............: avg=26.17ms  min=19.71탎 med=23.09ms  max=1.41s p(90)=45.73ms  p(95)=61.2ms
+     http_req_sending...............: avg=506.91탎 min=28.82탎 med=51.5탎   max=1.44s p(90)=122.46탎 p(95)=233.88탎
+     http_req_tls_handshaking.......: avg=13.8ms   min=0s      med=0s       max=2.89s p(90)=0s       p(95)=0s
+     http_req_waiting...............: avg=597.2ms  min=28.72ms med=506.04ms max=2.48s p(90)=984.26ms p(95)=1.22s
+     http_reqs......................: 276108  4579.192526/s
+     iteration_duration.............: avg=649.55ms min=36.07ms med=530.34ms max=4.25s p(90)=1.06s    p(95)=1.32s
+     iterations.....................: 276108  4579.192526/s
+     vus............................: 2907    min=2907      max=3000
+     vus_max........................: 3000    min=3000      max=3000
+```
+
+### Performance conclusion
 
 There is minimal performance degradation in the Keycloak from the user perspective when Open Telemetry agent is deployed.
