@@ -14,7 +14,7 @@ services:
       - 9464:9464 # Prometheus OTEL metrics exporter
       - 9990:9990 # WildFly Management /metrics
     environment:
-      JAVA_OPTS_APPEND: "-javaagent:/tmp/opentelemetry-javaagent-all.jar"
+      JAVA_OPTS_APPEND: "-javaagent:/tmp/opentelemetry-javaagent.jar"
       OTEL_SERVICE_NAME: keycloak
       OTEL_TRACES_EXPORTER: jaeger
       OTEL_METRICS_EXPORTER: prometheus
