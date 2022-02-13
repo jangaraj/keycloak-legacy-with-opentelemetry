@@ -1,7 +1,9 @@
-# keycloak-with-opentelemetry
+# keycloak-legacy-with-opentelemetry
+
+This repo is an example for Keycloak up to 16.1.1 and Keycloak legacy 17+.
 
 Single click provisioning
-[![Gitpod ready-to-test](https://img.shields.io/badge/Gitpod-ready--to--test-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jangaraj/keycloak-with-opentelemetry/)
+[![Gitpod ready-to-test](https://img.shields.io/badge/Gitpod-ready--to--test-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jangaraj/keycloak-legacy-with-opentelemetry/)
 - Keycloak login: `admin/admin`
 - Keycloak metric SPI metrics: `/auth/realms/master/metrics` (disabled for a moment)
 - Keycloak metrics: `:9990/metrics`

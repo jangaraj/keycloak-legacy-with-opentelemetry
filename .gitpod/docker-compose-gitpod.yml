@@ -11,13 +11,13 @@ services:
       dockerfile: Dockerfile-keycloak-with-opentelemetry
     ports:
       - 8080:8080 # Keycloak
-      - 9464:9464 # Prometheus OTEL metrics exporter
+      #- 9464:9464 # Prometheus OTEL metrics exporter
       - 9990:9990 # WildFly Management /metrics
     environment:
       JAVA_OPTS_APPEND: "-javaagent:/tmp/opentelemetry-javaagent.jar"
       OTEL_SERVICE_NAME: keycloak
       OTEL_TRACES_EXPORTER: jaeger
-      OTEL_METRICS_EXPORTER: prometheus
+      xOTEL_METRICS_EXPORTER: prometheus
       OTEL_EXPORTER_JAEGER_ENDPOINT: http://jaeger:14250
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
